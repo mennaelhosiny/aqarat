@@ -193,7 +193,10 @@ sup {
   font-size: 0.75em;
   line-height: 0;
   vertical-align: baseline; }
+body ,h1,h2,h3,h4,h5,h6{
+    font-family: 'Cairo', sans-serif !important;
 
+}
 sub {
   bottom: -.25em; }
 
