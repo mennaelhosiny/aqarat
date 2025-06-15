@@ -239,6 +239,24 @@ code {
   word-wrap: break-word; }
   a > code {
     color: inherit; }
+.whatsapp-icon {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-icon img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+  transform: scale(1.1);
+}
 
 kbd {
   padding: 0.2rem 0.4rem;
