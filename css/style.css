@@ -253,7 +253,16 @@ code {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
-
+  .badge-sold {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #dc3545;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
 .whatsapp-icon img:hover {
   transform: scale(1.1);
 }
@@ -477,7 +486,7 @@ progress {
       font-size: 2.5rem; } }
 
 .list-unstyled {
-  padding-left: 0;
+  padding-right: 0;
   list-style: none; }
 
 .list-inline {
