@@ -14,7 +14,6 @@
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,40 +43,70 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <nav class="site-nav">
-      <div class="container" dir="rtl">
-        <div class="menu-bg-wrap">
-          <div class="site-navigation">
-            <a href="index.html" class="logo m-0 float-start">
-              <img src="images/GOLD LOGO.png" alt="" srcset="" style="height: 70px;">
+<nav class="site-nav">
+  <div class="container" dir="rtl">
+    <div class="menu-bg-wrap">
+      <div class="site-navigation">
+        <a href="index.html" class="logo m-0 float-start">
+          <img src="images/GOLD LOGO.png" alt="" style="height: 70px;">
+        </a>
+
+        <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end mt-3">
+          <li class="active"><a href="index.html">الصفحة الرئيسية</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="services.html">خدماتنا</a></li>
+          <li><a href="properties.html">مشارعنا</a></li>
+
+          <!-- بداية الدروب داون للأراضي -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownArady" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              الأراضي
             </a>
-
-            <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end mt-3"
-            >
-              <li class="active"><a href="index.html">الصفحة الرئيسية</a></li>
-              <li >
-                <a href="about.html">من نحن</a>
-              
-              </li>
-              <li><a href="services.html">خدماتنا</a></li>
-              <li><a href="properties.html">مشارعنا</a></li>
-              <li><a href="arady.html">الاراضي</a></li>
-
+            <ul class="dropdown-menu text-end" aria-labelledby="dropdownArady">
+              <li><a class="dropdown-item" href="arady.html">كل الأراضي</a></li>
+              <li><a class="dropdown-item" href="arady2.html">أراضي تم بيعها </a></li>
+             
             </ul>
+          </li>
+          <!-- نهاية الدروب داون -->
+        </ul>
 
-            <a
-              href="#"
-              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
+        <a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+          data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
+<script>
+  // استخراج اسم الصفحة الحالية من الـ URL
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // استهداف كل روابط النافبار
+  const navLinks = document.querySelectorAll(".site-menu a");
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.parentElement.classList.add("active");
+    }
+
+    // خاص بالأراضي داخل الدروب داون
+    if (
+      (currentPage === "arady.html" || currentPage === "arady2.html") &&
+      link.closest(".dropdown-menu")
+    ) {
+      link.classList.add("active"); // تفعيل الرابط داخل الدروب
+      const parentDropdown = link.closest(".dropdown").querySelector(".nav-link");
+      if (parentDropdown) {
+        parentDropdown.classList.add("active"); // تفعيل الزر الرئيسي للدروب داون
+      }
+    }
+  });
+</script>
+
 
     <div class="hero">
       <div class="hero-slide">
@@ -295,46 +324,7 @@
       </div>
     </div>
 
-  <div class="container py-5">
-    <h2 class="text-center mb-5">أراضي تم بيعها</h2>
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card position-relative"  dir="rtl">
-          <img src="./images/stad2.jpeg" class="card-img-top" alt="أرض 1">
-          <span class="badge-sold">مباعة</span>
-          <div class="card-body">
-            <h5 class="card-title">أرض سكنية - التجمع الخامس</h5>
-            <p class="card-text">تم بيع الأرض بمساحة 500 متر مربع تقع في موقع متميز بالقرب من شارع التسعين.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card position-relative"  dir="rtl">
-          <img src="./images/stad3.jpeg" class="card-img-top" alt="أرض 2">
-          <span class="badge-sold">مباعة</span>
-          <div class="card-body">
-            <h5 class="card-title">أرض زراعية - طريق مصر إسكندرية</h5>
-            <p class="card-text">أرض زراعية خصبة على مساحة 2 فدان، تم بيعها مؤخرًا لمستثمر زراعي.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card position-relative"  dir="rtl">
-          <img src="./images/stad4.jpeg" class="card-img-top" alt="أرض 3">
-          <span class="badge-sold">مباعة</span>
-          <div class="card-body">
-            <h5 class="card-title">أرض تجارية - مدينة نصر</h5>
-            <p class="card-text">أرض ممتازة للاستثمار التجاري بمساحة 300 متر، بيعت خلال أسبوع واحد فقط.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
     <section class="features-1">
     <div class="container">
